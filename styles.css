@@ -208,7 +208,7 @@ img {
 }
 
 .hero-container {
-  max-width: 600px;
+  max-width: var(--max-width);
   position: relative;
   z-index: 1;
 }
@@ -510,6 +510,7 @@ img {
 }
 
 .feature-icon {
+  filter: brightness(0) invert(1);
   width: 52px;
   height: 52px;
   background: var(--accent-dim);
@@ -559,6 +560,9 @@ img {
   border-color: var(--accent);
   background: var(--bg-card-hover);
   transform: translateY(-1px);
+}
+.format-item img {
+   filter: brightness(0) invert(1);
 }
 
 /* --- JWT Section --- */
@@ -825,6 +829,10 @@ img {
   font-size: 0.85rem;
   color: var(--text-muted);
   font-weight: 500;
+}
+
+.cta-privacy svg {
+   margin-left: -35px;
 }
 
 /* --- FAQ --- */
