@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Base64Coder: All-in-one Chrome extension for Base64 encoding/decoding, JWT inspection, and image-to-base64 conversion. Fast, private, and developer-friendly.">
+  <meta name="keywords" content="Base64, encoder, decoder, JWT inspector, Chrome extension, image to base64, developer tools">
+  <meta property="og:title" content="Base64Coder: Encode, Decode & JWT Inspector">
+  <meta property="og:description" content="All-in-one Base64 tool for developers. Encode/decode text, inspect JWTs, and convert images to Base64 — all from your browser.">
+  <meta property="og:image" content="assets/images/icons/b64c128.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <title>Base64Coder — Encode, Decode & JWT Inspector</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icons/b64c32.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <img src="assets/images/icons/b64c32.png" alt="Base64Coder Logo" width="32" height="32">
+        <span>Base64Coder</span>
+      </a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#jwt">JWT Inspector</a>
+        <a href="#image">Image to Base64</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <a href="https://chromewebstore.google.com/detail/base64coder-encode-decode/ebgonfpmppfndacngpbmgajldoabnjkm" class="btn btn-primary nav-cta" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+        Add to Chrome
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-container">
+      <div class="hero-badge">
+        <span>🚀 Available on Chrome Web Store</span>
+      </div>
+      <h1 class="hero-title">
+        Base64 Encode, Decode &<br>
+        <span class="hero-highlight">JWT Inspector</span> in One Tool
+      </h1>
+      <p class="hero-subtitle">
+        The ultimate Chrome extension for developers. Encode/decode text, inspect JWT tokens, 
+        and convert images to Base64 — all from your browser. No external websites needed.
+      </p>
+      <div class="hero-actions">
+        <a href="https://chromewebstore.google.com/detail/base64coder-encode-decode/ebgonfpmppfndacngpbmgajldoabnjkm" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+          Install for Free
+        </a>
+        <a href="#features" class="btn btn-outline btn-lg">
+          Explore Features
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-value">5-in-1</span>
+          <span class="stat-label">Essential Tools</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">100%</span>
+          <span class="stat-label">Private & Local</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">v1.28</span>
+          <span class="stat-label">Actively Maintained</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-card-header">
+          <div class="hero-card-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <span class="hero-card-title">Base64Coder</span>
+        </div>
+        <div class="hero-card-body">
+          <div class="hero-card-tabs">
+            <span class="tab active">Encode</span>
+            <span class="tab">Decode</span>
+            <span class="tab">JWT</span>
+            <span class="tab">Image</span>
+          </div>
+          <div class="hero-card-input">
+            <span class="code-label">&gt; Input text</span>
+            <div class="code-block">
+              <span class="code-text">Hello, World!</span>
+            </div>
+          </div>
+          <div class="hero-card-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2"><path d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+          </div>
+          <div class="hero-card-input output">
+            <span class="code-label">&gt; Base64 output</span>
+            <div class="code-block">
+              <span class="code-text accent">SGVsbG8sIFdvcmxkIQ==</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <div class="section-container">
+      <div class="section-header">
+        <h2>Everything You Need in <span class="highlight">One Extension</span></h2>
+        <p>Five powerful tools packed into a lightweight extension. No more switching between websites.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <img src="assets/images/icons/text.png" alt="Text" width="40" height="40">
+          </div>
+          <h3>Base64 Encode & Decode</h3>
+          <p>Instantly convert any text, file, or URL to Base64 and back. Perfect for API testing, data serialization, and debugging.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <img src="assets/images/icons/jwt.png" alt="JWT" width="40" height="40">
+          </div>
+          <h3>JWT Payload Decoder</h3>
+          <p>Paste any JWT token and instantly decode its payload to a human-readable JSON format. Inspect claims, check expiration, and verify token data without external tools.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <img src="assets/images/icons/image.png" alt="Image" width="40" height="40">
+          </div>
+          <h3>Image to Base64</h3>
+          <p>Right-click any image on a webpage and copy its Base64 string. Ideal for embedding images in CSS, HTML emails, or JSON payloads.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <img src="assets/images/icons/file.png" alt="File" width="40" height="40">
+          </div>
+          <h3>Smart File Handling</h3>
+          <p>Encode or decode entire files — images, PDFs, JSON — within the extension. Drag & drop support with no upload limits.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <img src="assets/images/icons/copy.png" alt="Copy" width="40" height="40">
+          </div>
+          <h3>Clipboard & Hotkeys</h3>
+          <p>Copy results instantly with one click. Use customizable keyboard shortcuts and the omnibox keyword "64" for quick access.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <img src="assets/images/icons/structure.png" alt="Structure" width="40" height="40">
+          </div>
+          <h3>Minimalistic & Fast UI</h3>
+          <p>Clean, distraction-free interface with both light and dark themes. Snappy performance with near-zero resource usage — it won't slow your browser down.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Supported Formats -->
+  <section class="formats">
+    <div class="section-container">
+      <div class="section-header">
+        <h2>Supports <span class="highlight">All Major Formats</span></h2>
+        <p>Encode and decode text, images, audio, video, and more.</p>
+      </div>
+      <div class="formats-grid">
+        <div class="format-item">
+          <img src="assets/images/icons/text.png" alt="Text" width="28" height="28">
+          <span>Plain Text</span>
+        </div>
+        <div class="format-item">
+          <img src="assets/images/icons/image.png" alt="Image" width="28" height="28">
+          <span>Images</span>
+        </div>
+        <div class="format-item">
+          <img src="assets/images/icons/audio.png" alt="Audio" width="28" height="28">
+          <span>Audio</span>
+        </div>
+        <div class="format-item">
+          <img src="assets/images/icons/video.png" alt="Video" width="28" height="28">
+          <span>Video</span>
+        </div>
+        <div class="format-item">
+          <img src="assets/images/icons/icons8-json-96.png" alt="JSON" width="28" height="28">
+          <span>JSON</span>
+        </div>
+        <div class="format-item">
+          <img src="assets/images/icons/file.png" alt="File" width="28" height="28">
+          <span>PDF & Docs</span>
+        </div>
+        <div class="format-item">
+          <img src="assets/images/icons/base64.png" alt="Base64" width="28" height="28">
+          <span>Base64 Strings</span>
+        </div>
+        <div class="format-item">
+          <img src="assets/images/icons/jwt.png" alt="JWT" width="28" height="28">
+          <span>JWT Tokens</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JWT Inspector Highlight -->
+  <section class="jwt-section" id="jwt">
+    <div class="section-container">
+      <div class="jwt-content">
+        <div class="jwt-text">
+          <h2>Built-in <span class="highlight">JWT Payload Decoder</span></h2>
+          <p>Paste any JWT token and instantly decode its payload to a clean, pretty-printed JSON view. No need for external websites like jwt.io — everything runs locally in your browser for maximum privacy.</p>
+          <ul class="jwt-features">
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              Instantly decode JWT payload to readable JSON
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              Verify token claims and expiration at a glance
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              Copy decoded payload with one click
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              100% local — tokens never leave your browser
+            </li>
+          </ul>
+        </div>
+        <div class="jwt-visual">
+          <div class="jwt-card">
+            <div class="jwt-card-header">
+              <span class="jwt-dot red"></span>
+              <span class="jwt-dot yellow"></span>
+              <span class="jwt-dot green"></span>
+              <span>JWT Inspector</span>
+            </div>
+            <div class="jwt-card-body">
+              <div class="jwt-segment">
+                <span class="jwt-label payload">PAYLOAD</span>
+                <code>
+                  {<br>
+                  &nbsp;&nbsp;"sub": "1234567890",<br>
+                  &nbsp;&nbsp;"name": "John Doe",<br>
+                  &nbsp;&nbsp;"iat": 1516239022,<br>
+                  &nbsp;&nbsp;"exp": 1716239022<br>
+                  }
+                </code>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image to Base64 Highlight -->
+  <section class="image-section" id="image">
+    <div class="section-container">
+      <div class="image-content">
+        <div class="image-visual">
+          <div class="image-demo">
+            <div class="image-demo-browser">
+              <div class="browser-bar">
+                <span class="browser-dot red"></span>
+                <span class="browser-dot yellow"></span>
+                <span class="browser-dot green"></span>
+                <span class="browser-url">https://example.com/photo.jpg</span>
+              </div>
+              <div class="browser-content">
+                <div class="browser-img"></div>
+                <div class="context-menu">
+                  <div class="ctx-item">
+                    <img src="assets/images/icons/copy.png" alt="" width="16" height="16">
+                    <span>Copy image to Base64</span>
+                    <kbd>Ctrl+Shift+C</kbd>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="image-text">
+          <h2>Right-Click Any Image → <span class="highlight">Get Base64</span></h2>
+          <p>Convert images to Base64 without leaving your page. Just right-click any image and select "Copy image to Base64" from the context menu. The Base64 string is instantly copied to your clipboard.</p>
+          <ul class="image-features">
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              Works on any website — right-click an image
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              Shows image metadata (dimensions, size, format)
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              Perfect for CSS inline images & HTML emails
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="section-container">
+      <div class="cta-card">
+        <h2>Ready to Streamline Your Workflow?</h2>
+        <p>Join developers who trust Base64Coder for their daily encoding, decoding, and JWT inspection needs.</p>
+        <div class="cta-actions">
+          <a href="https://chromewebstore.google.com/detail/base64coder-encode-decode/ebgonfpmppfndacngpbmgajldoabnjkm" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+            Install from Chrome Web Store
+          </a>
+          <a href="https://github.com/rodewitsch/Base64Coder" class="btn btn-outline btn-lg" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            View on GitHub
+          </a>
+        </div>
+        <p class="cta-privacy">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Privacy First: No data collection, no external requests, no tracking. Everything runs locally.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq" id="faq">
+    <div class="section-container">
+      <div class="section-header">
+        <h2>Frequently Asked <span class="highlight">Questions</span></h2>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>Is Base64Coder free to use?</h3>
+          <p>Yes! Base64Coder is completely free with no hidden costs, premium tiers, or in-app purchases. It's open-source software under the MIT license.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Does my data leave my browser?</h3>
+          <p>Never. All encoding, decoding, and JWT inspection happens 100% locally in your browser. No data is ever sent to external servers.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What is JWT decoding used for?</h3>
+          <p>JWT (JSON Web Token) payload decoding lets you inspect the claims inside authentication tokens used by most modern APIs. You can verify user info, permissions, and check expiration without third-party tools.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How does the omnibox keyword work?</h3>
+          <p>Type "64" in Chrome's address bar, press Tab, then type or paste your text. Press Enter to encode it to Base64 instantly — no need to open the extension.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Can I decode Base64 files?</h3>
+          <p>Absolutely! You can drag and drop files into the extension to encode them to Base64, or paste Base64 strings to decode them back into their original format.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Does it support dark mode?</h3>
+          <p>Yes! Base64Coder has a beautiful dark theme by default and also supports light mode. It follows your system preference or you can toggle manually.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="section-container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="assets/images/icons/b64c48.png" alt="Base64Coder" width="48" height="48">
+            <span>Base64Coder</span>
+          </div>
+          <p>Encode, decode, and inspect — all from your browser. Made for developers, by developers.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Links</h4>
+          <a href="https://chromewebstore.google.com/detail/base64coder-encode-decode/ebgonfpmppfndacngpbmgajldoabnjkm" target="_blank" rel="noopener">Chrome Web Store</a>
+          <a href="https://github.com/rodewitsch/Base64Coder" target="_blank" rel="noopener">GitHub Repository</a>
+          <a href="https://github.com/rodewitsch/Base64Coder/blob/master/LICENSE" target="_blank" rel="noopener">License</a>
+        </div>
+        <div class="footer-links">
+          <h4>Resources</h4>
+          <a href="#features">Features</a>
+          <a href="#screenshots">Screenshots</a>
+          <a href="#faq">FAQ</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Base64Coder. Open source under MIT License.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
