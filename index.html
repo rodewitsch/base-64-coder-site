@@ -50,7 +50,7 @@
       </div>
       <h1 class="hero-title">
         Base64 Encode, Decode &<br>
-        <span class="hero-highlight">JWT Inspector</span> in One Tool
+        JWT Inspector in One Tool
       </h1>
       <p class="hero-subtitle">
         The ultimate Chrome extension for developers. Encode/decode text, inspect JWT tokens, 
@@ -90,25 +90,27 @@
           <span class="hero-card-title">Base64Coder</span>
         </div>
         <div class="hero-card-body">
-          <div class="hero-card-tabs">
-            <span class="tab active">Encode</span>
-            <span class="tab">Decode</span>
-            <span class="tab">JWT</span>
-            <span class="tab">Image</span>
-          </div>
-          <div class="hero-card-input">
-            <span class="code-label">&gt; Input text</span>
-            <div class="code-block">
-              <span class="code-text">Hello, World!</span>
+          <div class="hc-source">
+            <span class="hc-label">Source:</span>
+            <div class="hc-textarea">
+              <span class="hc-placeholder">Enter your text or drop your file.</span>
             </div>
           </div>
-          <div class="hero-card-arrow">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2"><path d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+          <div class="hc-convert">
+            <span class="hc-label">Convert to:</span>
+            <div class="hc-formats">
+              <span class="hc-fmt active" title="Text"><img src="assets/images/icons/text.png" alt="text" width="16" height="16"></span>
+              <span class="hc-fmt" title="Base64"><img src="assets/images/icons/base64.png" alt="base64" width="16" height="16"></span>
+              <span class="hc-fmt" title="JWT"><img src="assets/images/icons/jwt.png" alt="jwt" width="16" height="16"></span>
+              <span class="hc-fmt" title="Image"><img src="assets/images/icons/image.png" alt="image" width="16" height="16"></span>
+              <span class="hc-fmt" title="Audio"><img src="assets/images/icons/audio.png" alt="audio" width="16" height="16"></span>
+              <span class="hc-fmt" title="Video"><img src="assets/images/icons/video.png" alt="video" width="16" height="16"></span>
+            </div>
           </div>
-          <div class="hero-card-input output">
-            <span class="code-label">&gt; Base64 output</span>
-            <div class="code-block">
-              <span class="code-text accent">SGVsbG8sIFdvcmxkIQ==</span>
+          <div class="hc-result">
+            <span class="hc-label">Result:</span>
+            <div class="hc-result-box">
+              <span class="hc-result-text accent">SGVsbG8sIFdvcmxkIQ==</span>
             </div>
           </div>
         </div>
