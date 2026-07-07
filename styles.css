@@ -150,6 +150,10 @@ img {
   color: var(--text-primary);
 }
 
+.nav-logo span {
+   margin-top: 5px;
+}
+
 .nav-links {
   display: flex;
   gap: 32px;
