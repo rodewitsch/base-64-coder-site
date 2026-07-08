@@ -16,9 +16,9 @@
   --text-secondary: #a0a0b4;
   --text-muted: #6b6b80;
   
-  --accent: #60a5fa;
-  --accent-glow: rgba(96, 165, 250, 0.25);
-  --accent-dim: rgba(96, 165, 250, 0.1);
+  --accent: #34d399;
+  --accent-glow: rgba(52, 211, 153, 0.25);
+  --accent-dim: rgba(52, 211, 153, 0.1);
   --green: #34d399;
   --green-dim: rgba(52, 211, 153, 0.15);
   --red: #f87171;
@@ -92,8 +92,8 @@ img {
   box-shadow: 0 0 20px var(--accent-glow);
 }
 .btn-primary:hover {
-  background: #93c5fd;
-  box-shadow: 0 0 30px rgba(96, 165, 250, 0.4);
+  background: #6ee7b7;
+  box-shadow: 0 0 30px rgba(52, 211, 153, 0.4);
   transform: translateY(-1px);
 }
 
@@ -205,8 +205,8 @@ img {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 50% -20%, rgba(96, 165, 250, 0.08), transparent),
-    radial-gradient(ellipse 40% 50% at 80% 80%, rgba(167, 139, 250, 0.06), transparent),
+    radial-gradient(ellipse 80% 60% at 50% -20%, rgba(52, 211, 153, 0.08), transparent),
+    radial-gradient(ellipse 40% 50% at 80% 80%, rgba(16, 185, 129, 0.06), transparent),
     radial-gradient(ellipse 30% 40% at 20% 50%, rgba(52, 211, 153, 0.04), transparent);
   pointer-events: none;
 }
@@ -240,7 +240,7 @@ img {
 }
 
 .hero-highlight {
-  background: linear-gradient(135deg, var(--accent), var(--purple));
+  background: linear-gradient(135deg, var(--accent), #10b981);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -414,7 +414,7 @@ img {
   color: #ccc;
   word-break: break-all;
 }
-.hc-result-text.accent { color: #60a5fa; }
+.hc-result-text.accent { color: #34d399; }
 
 .hc-actions {
   display: flex;
@@ -478,10 +478,99 @@ img {
 }
 
 .highlight {
-  background: linear-gradient(135deg, var(--accent), #818cf8);
+  background: linear-gradient(135deg, var(--accent), #10b981);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* --- Video Showcase --- */
+.video-showcase {
+  padding: 80px 0;
+  background: var(--bg-primary);
+}
+
+.video-wrapper {
+  position: relative;
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.video-card {
+  display: block;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5), 0 0 80px var(--accent-glow);
+  border: 1px solid var(--border);
+  transition: all var(--transition-slow);
+  background: var(--bg-card);
+}
+
+.video-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5), 0 0 100px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+.video-thumbnail {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #000;
+}
+
+.video-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.video-card:hover .video-thumbnail img {
+  transform: scale(1.05);
+}
+
+.video-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: all var(--transition);
+  backdrop-filter: blur(4px);
+}
+
+.video-card:hover .video-play-btn {
+  background: var(--accent);
+  color: #0a0a0f;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-play-btn svg {
+  margin-left: 4px;
+}
+
+.video-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border);
+}
+
+.video-info svg {
+  color: var(--accent);
+  flex-shrink: 0;
 }
 
 /* --- Features --- */
@@ -892,7 +981,7 @@ img {
 }
 
 .try-install-banner a:hover {
-  color: #93c5fd;
+  color: #6ee7b7;
 }
 
 /* =============================================
@@ -1272,7 +1361,7 @@ img {
 }
 
 .cta-card {
-  background: linear-gradient(135deg, rgba(96, 165, 250, 0.08), rgba(167, 139, 250, 0.06));
+  background: linear-gradient(135deg, rgba(52, 211, 153, 0.08), rgba(16, 185, 129, 0.06));
   border: 1px solid var(--border-light);
   border-radius: var(--radius-xl);
   padding: 56px 40px;
@@ -1502,6 +1591,9 @@ img {
   }
   .section-header h2 {
     font-size: 1.5rem;
+  }
+  .video-showcase {
+    padding: 50px 16px;
   }
 }
 
