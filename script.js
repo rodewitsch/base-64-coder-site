@@ -553,11 +553,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ============================================================
-  //  Floating FAQ button
+  //  Scroll-to-top button
   // ============================================================
 
-  document.getElementById('demo-open-faq').addEventListener('click', () => {
-    document.getElementById('faq').scrollIntoView({ behavior: 'smooth' });
+  document.getElementById('demo-scroll-top').addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
 });

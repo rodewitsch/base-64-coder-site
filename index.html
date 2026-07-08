@@ -27,14 +27,13 @@
         <span>Base64Coder</span>
       </a>
       <div class="nav-links">
-        <a href="#try-it">Try It</a>
         <a href="#features">Features</a>
-        <a href="#context-menu">Context Menu</a>
+        <a href="#video">See It in Action</a>
+        <a href="#try-it">Try It</a>
         <a href="#faq">FAQ</a>
       </div>
       <a href="https://chromewebstore.google.com/detail/base64coder-encode-decode/ebgonfpmppfndacngpbmgajldoabnjkm" class="btn btn-primary nav-cta" target="_blank" rel="noopener">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
-        Add to Chrome
+        Install for Free
       </a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
@@ -59,7 +58,6 @@
       </p>
       <div class="hero-actions">
         <a href="https://chromewebstore.google.com/detail/base64coder-encode-decode/ebgonfpmppfndacngpbmgajldoabnjkm" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
           Install for Free
         </a>
         <a href="#features" class="btn btn-outline btn-lg">
@@ -115,39 +113,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Video Showcase -->
-  <section class="video-showcase">
-    <div class="section-container">
-      <div class="section-header">
-        <h2>See It <span class="highlight">in Action</span></h2>
-        <p>Watch how Base64Coder works — encoding, decoding, JWT inspection, and more.</p>
-      </div>
-      <div class="video-wrapper">
-        <a href="https://youtu.be/bKh3bAZSogo" target="_blank" rel="noopener" class="video-card">
-          <div class="video-thumbnail">
-            <img
-              src="https://github.com/user-attachments/assets/de640acc-f6dd-427b-9fc2-2643d3035ca5"
-              alt="Base64Coder Demo Video"
-              loading="lazy"
-            />
-            <div class="video-play-btn">
-              <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
-            </div>
-          </div>
-          <div class="video-info">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.94 2C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
-              <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/>
-            </svg>
-            <span>Watch on YouTube — Full demo of encoding, decoding, JWT inspection & more</span>
-          </div>
-        </a>
       </div>
     </div>
   </section>
@@ -246,131 +211,6 @@
           <img src="assets/images/icons/jwt.png" alt="JWT" width="28" height="28">
           <span>JWT Tokens</span>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Try It Now — Live Demo (mirrors the extension UI) -->
-  <section class="try-it" id="try-it">
-    <div class="section-container">
-      <div class="section-header">
-        <h2>Try It <span class="highlight">Right Now</span></h2>
-        <p>Experience the extension without installing — it works exactly like the real thing.</p>
-      </div>
-
-      <div class="demo-card">
-      
-      <!-- Drop overlay -->
-      <div id="demo-drop-overlay">
-        <img draggable="false" id="demo-drop-overlay-img" src="assets/images/icons/drag.png" alt="drag" />
-        <p id="demo-drop-overlay-text">Drag & Drop to Upload File</p>
-      </div>
-
-      <!-- Source area -->
-      <div class="demo-action-area">
-        <div class="demo-action-area-header">
-          <label for="demo-source">Source:</label>
-          <div class="demo-btn-panel">
-            <button title="Select file to encode in base64" class="demo-btn" id="demo-open-file">
-              <input type="file" id="demo-file-input" style="display:none" />
-              <img draggable="false" src="assets/images/icons/file.png" alt="open file" />
-              <span>file</span>
-            </button>
-            <button title="Copy source value" class="demo-btn" id="demo-copy-source">
-              <img draggable="false" src="assets/images/icons/copy.png" alt="copy" />
-              <span>copy</span>
-            </button>
-            <button title="Paste value from clipboard" class="demo-btn" id="demo-paste-source">
-              <img draggable="false" src="assets/images/icons/paste.png" alt="paste" />
-              <span>paste</span>
-            </button>
-            <button title="Clear source value" class="demo-btn" id="demo-clear-source">
-              <img draggable="false" src="assets/images/icons/delete.png" alt="clear" />
-              <span>clear</span>
-            </button>
-          </div>
-        </div>
-        <div class="demo-action-area-body">
-          <div id="demo-file-info" class="demo-file-info">
-            <img draggable="false" src="assets/images/icons/file.png" alt="opened file" />
-            <label id="demo-file-name">No file selected</label>
-          </div>
-          <textarea id="demo-source" placeholder="Enter your text or drop your file."></textarea>
-          <span id="demo-source-length">0 characters</span>
-        </div>
-      </div>
-
-      <!-- Convert actions -->
-      <div class="demo-action-area">
-        <div class="demo-action-area-header">
-          <label>Convert to:</label>
-        </div>
-        <div class="demo-actions">
-          <button data-tooltip="1" title="Convert source value to text" class="demo-btn demo-convert-btn disabled" id="demo-decode-btn">
-            <img draggable="false" src="assets/images/icons/text.png" alt="to text" />
-            <span>text</span>
-          </button>
-          <button data-tooltip="2" title="Convert source value to base64" class="demo-btn demo-convert-btn disabled" id="demo-encode-btn">
-            <img draggable="false" src="assets/images/icons/base64.png" alt="to base64" />
-            <span>base64</span>
-          </button>
-          <button data-tooltip="3" title="Convert source value to parsed JWT" class="demo-btn demo-convert-btn disabled" id="demo-jwt-btn">
-            <img draggable="false" src="assets/images/icons/jwt.png" alt="decode jwt" />
-            <span>jwt</span>
-          </button>
-          <button data-tooltip="4" title="Convert source base64 value to image" class="demo-btn demo-convert-btn disabled" id="demo-image-btn">
-            <img draggable="false" src="assets/images/icons/image.png" alt="to image" />
-            <span>image</span>
-          </button>
-
-        </div>
-      </div>
-
-      <!-- Result area -->
-      <div class="demo-action-area">
-        <div class="demo-action-area-header">
-          <label for="demo-result">Result:</label>
-          <div class="demo-btn-panel">
-            <button title="Format JSON value" class="demo-btn" id="demo-beautify">
-              <img draggable="false" src="assets/images/icons/structure.png" alt="tree" />
-              <span>pretty</span>
-            </button>
-            <button title="Copy result value to clipboard" class="demo-btn disabled" id="demo-copy-result">
-              <img draggable="false" src="assets/images/icons/copy.png" alt="copy" />
-              <span>copy</span>
-            </button>
-            <button title="Clear result value" class="demo-btn disabled" id="demo-clear-result">
-              <img draggable="false" src="assets/images/icons/delete.png" alt="clear" />
-              <span>clear</span>
-            </button>
-          </div>
-        </div>
-        <div class="demo-action-area-body">
-          <div id="demo-result" contenteditable="true"></div>
-          <span id="demo-result-length">0 characters</span>
-          <div id="demo-result-img-container" class="demo-result-img-container">
-            <img id="demo-result-img" draggable="false" alt="Image preview" />
-            <p class="demo-result-img-meta" id="demo-result-img-meta">
-              <strong>Image info</strong>
-              <span>Size: <span id="demo-result-img-size">0</span> KB</span>
-              <span>Resolution: <span id="demo-result-img-resolution"></span> px</span>
-            </p>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Floating panel -->
-      <div class="demo-floating-panel">
-        <button title="How to use the extension" class="demo-btn" id="demo-open-faq">
-          <img draggable="false" src="assets/images/icons/question-mark.png" alt="FAQ" />
-        </button>
-      </div>
-
-      </div><!-- /.demo-card -->
-
-      <div class="try-install-banner">
-        <p>✨ Like what you see? <a href="https://chromewebstore.google.com/detail/base64coder-encode-decode/ebgonfpmppfndacngpbmgajldoabnjkm" target="_blank" rel="noopener">Install the full extension</a> for omnibox support, context menus, keyboard shortcuts, and more!</p>
       </div>
     </div>
   </section>
@@ -515,6 +355,166 @@
     </div>
   </section>
 
+  <!-- Video Showcase -->
+  <section class="video-showcase" id="video">
+    <div class="section-container">
+      <div class="section-header">
+        <h2>See It <span class="highlight">in Action</span></h2>
+        <p>Watch how Base64Coder works — encoding, decoding, JWT inspection, and more.</p>
+      </div>
+      <div class="video-wrapper">
+        <a href="https://youtu.be/bKh3bAZSogo" target="_blank" rel="noopener" class="video-card">
+          <div class="video-thumbnail">
+            <img
+              src="https://github.com/user-attachments/assets/de640acc-f6dd-427b-9fc2-2643d3035ca5"
+              alt="Base64Coder Demo Video"
+              loading="lazy"
+            />
+            <div class="video-play-btn">
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+          </div>
+          <div class="video-info">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.94 2C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+              <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/>
+            </svg>
+            <span>Watch on YouTube — Full demo of encoding, decoding, JWT inspection & more</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Try It Now — Live Demo (mirrors the extension UI) -->
+  <section class="try-it" id="try-it">
+    <div class="section-container">
+      <div class="section-header">
+        <h2>Try It <span class="highlight">Right Now</span></h2>
+        <p>Experience the extension without installing — it works exactly like the real thing.</p>
+      </div>
+
+      <div class="demo-card">
+      
+      <!-- Drop overlay -->
+      <div id="demo-drop-overlay">
+        <img draggable="false" id="demo-drop-overlay-img" src="assets/images/icons/drag.png" alt="drag" />
+        <p id="demo-drop-overlay-text">Drag & Drop to Upload File</p>
+      </div>
+
+      <!-- Source area -->
+      <div class="demo-action-area">
+        <div class="demo-action-area-header">
+          <label for="demo-source">Source:</label>
+          <div class="demo-btn-panel">
+            <button title="Select file to encode in base64" class="demo-btn" id="demo-open-file">
+              <input type="file" id="demo-file-input" style="display:none" />
+              <img draggable="false" src="assets/images/icons/file.png" alt="open file" />
+              <span>file</span>
+            </button>
+            <button title="Copy source value" class="demo-btn" id="demo-copy-source">
+              <img draggable="false" src="assets/images/icons/copy.png" alt="copy" />
+              <span>copy</span>
+            </button>
+            <button title="Paste value from clipboard" class="demo-btn" id="demo-paste-source">
+              <img draggable="false" src="assets/images/icons/paste.png" alt="paste" />
+              <span>paste</span>
+            </button>
+            <button title="Clear source value" class="demo-btn" id="demo-clear-source">
+              <img draggable="false" src="assets/images/icons/delete.png" alt="clear" />
+              <span>clear</span>
+            </button>
+          </div>
+        </div>
+        <div class="demo-action-area-body">
+          <div id="demo-file-info" class="demo-file-info">
+            <img draggable="false" src="assets/images/icons/file.png" alt="opened file" />
+            <label id="demo-file-name">No file selected</label>
+          </div>
+          <textarea id="demo-source" placeholder="Enter your text or drop your file."></textarea>
+          <span id="demo-source-length">0 characters</span>
+        </div>
+      </div>
+
+      <!-- Convert actions -->
+      <div class="demo-action-area">
+        <div class="demo-action-area-header">
+          <label>Convert to:</label>
+        </div>
+        <div class="demo-actions">
+          <button data-tooltip="1" title="Convert source value to text" class="demo-btn demo-convert-btn disabled" id="demo-decode-btn">
+            <img draggable="false" src="assets/images/icons/text.png" alt="to text" />
+            <span>text</span>
+          </button>
+          <button data-tooltip="2" title="Convert source value to base64" class="demo-btn demo-convert-btn disabled" id="demo-encode-btn">
+            <img draggable="false" src="assets/images/icons/base64.png" alt="to base64" />
+            <span>base64</span>
+          </button>
+          <button data-tooltip="3" title="Convert source value to parsed JWT" class="demo-btn demo-convert-btn disabled" id="demo-jwt-btn">
+            <img draggable="false" src="assets/images/icons/jwt.png" alt="decode jwt" />
+            <span>jwt</span>
+          </button>
+          <button data-tooltip="4" title="Convert source base64 value to image" class="demo-btn demo-convert-btn disabled" id="demo-image-btn">
+            <img draggable="false" src="assets/images/icons/image.png" alt="to image" />
+            <span>image</span>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- Result area -->
+      <div class="demo-action-area">
+        <div class="demo-action-area-header">
+          <label for="demo-result">Result:</label>
+          <div class="demo-btn-panel">
+            <button title="Format JSON value" class="demo-btn" id="demo-beautify">
+              <img draggable="false" src="assets/images/icons/structure.png" alt="tree" />
+              <span>pretty</span>
+            </button>
+            <button title="Copy result value to clipboard" class="demo-btn disabled" id="demo-copy-result">
+              <img draggable="false" src="assets/images/icons/copy.png" alt="copy" />
+              <span>copy</span>
+            </button>
+            <button title="Clear result value" class="demo-btn disabled" id="demo-clear-result">
+              <img draggable="false" src="assets/images/icons/delete.png" alt="clear" />
+              <span>clear</span>
+            </button>
+          </div>
+        </div>
+        <div class="demo-action-area-body">
+          <div id="demo-result" contenteditable="true"></div>
+          <span id="demo-result-length">0 characters</span>
+          <div id="demo-result-img-container" class="demo-result-img-container">
+            <img id="demo-result-img" draggable="false" alt="Image preview" />
+            <p class="demo-result-img-meta" id="demo-result-img-meta">
+              <strong>Image info</strong>
+              <span>Size: <span id="demo-result-img-size">0</span> KB</span>
+              <span>Resolution: <span id="demo-result-img-resolution"></span> px</span>
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Floating panel -->
+      <div class="demo-floating-panel">
+        <button title="Scroll to top" class="demo-btn" id="demo-scroll-top">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 15l-6-6-6 6"/>
+          </svg>
+        </button>
+      </div>
+
+      </div><!-- /.demo-card -->
+
+      <div class="try-install-banner">
+        <p>✨ Like what you see? <a href="https://chromewebstore.google.com/detail/base64coder-encode-decode/ebgonfpmppfndacngpbmgajldoabnjkm" target="_blank" rel="noopener">Install the full extension</a> for omnibox support, context menus, keyboard shortcuts, and more!</p>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA Section -->
   <section class="cta">
     <div class="section-container">
@@ -523,8 +523,7 @@
         <p>Join developers who trust Base64Coder for their daily encoding, decoding, and JWT inspection needs.</p>
         <div class="cta-actions">
           <a href="https://chromewebstore.google.com/detail/base64coder-encode-decode/ebgonfpmppfndacngpbmgajldoabnjkm" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
-            Install from Chrome Web Store
+            Install for Free
           </a>
           <a href="https://github.com/rodewitsch/Base64Coder" class="btn btn-outline btn-lg" target="_blank" rel="noopener">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -560,7 +559,7 @@
         </div>
         <div class="faq-item">
           <h3>How does the omnibox keyword work?</h3>
-          <p>Type "64" in Chrome's address bar, press Tab, then type or paste your text. Press Enter to encode it to Base64 instantly — no need to open the extension.</p>
+          <p>Type "64" in address bar, press Tab, then type or paste your text. Press Enter to encode it to Base64 instantly — no need to open the extension.</p>
         </div>
         <div class="faq-item">
           <h3>Can I decode Base64 files?</h3>
@@ -594,6 +593,8 @@
         <div class="footer-links">
           <h4>Resources</h4>
           <a href="#features">Features</a>
+          <a href="#video">See It in Action</a>
+          <a href="#try-it">Try It</a>
           <a href="#faq">FAQ</a>
         </div>
       </div>

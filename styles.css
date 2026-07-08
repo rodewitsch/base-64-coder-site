@@ -958,6 +958,12 @@ img {
   height: 20px;
 }
 
+.demo-floating-panel .demo-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke: #ccc;
+}
+
 /* Install banner */
 .try-install-banner {
   text-align: center;
