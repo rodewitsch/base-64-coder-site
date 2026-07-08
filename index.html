@@ -27,9 +27,9 @@
         <span>Base64Coder</span>
       </a>
       <div class="nav-links">
+        <a href="#try-it">Try It</a>
         <a href="#features">Features</a>
-        <a href="#jwt">JWT Inspector</a>
-        <a href="#image">Image to Base64</a>
+        <a href="#context-menu">Context Menu</a>
         <a href="#faq">FAQ</a>
       </div>
       <a href="https://chromewebstore.google.com/detail/base64coder-encode-decode/ebgonfpmppfndacngpbmgajldoabnjkm" class="btn btn-primary nav-cta" target="_blank" rel="noopener">
@@ -111,7 +111,7 @@
           <div class="hc-result">
             <span class="hc-label">Result:</span>
             <div class="hc-result-box">
-              <span class="hc-result-text accent">SGVsbG8sIFdvcmxkIQ==</span>
+              <span class="hc-result-text">SGVsbG8sIFdvcmxkIQ==</span>
             </div>
           </div>
         </div>
@@ -212,6 +212,172 @@
         <div class="format-item">
           <img src="assets/images/icons/jwt.png" alt="JWT" width="28" height="28">
           <span>JWT Tokens</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Try It Now — Live Demo (mirrors the extension UI) -->
+  <section class="try-it" id="try-it">
+    <div class="section-container">
+      <div class="section-header">
+        <h2>Try It <span class="highlight">Right Now</span></h2>
+        <p>Experience the extension without installing — it works exactly like the real thing.</p>
+      </div>
+
+      <div class="demo-card">
+      
+      <!-- Drop overlay -->
+      <div id="demo-drop-overlay">
+        <img draggable="false" id="demo-drop-overlay-img" src="assets/images/icons/drag.png" alt="drag" />
+        <p id="demo-drop-overlay-text">Drag & Drop to Upload File</p>
+      </div>
+
+      <!-- Source area -->
+      <div class="demo-action-area">
+        <div class="demo-action-area-header">
+          <label for="demo-source">Source:</label>
+          <div class="demo-btn-panel">
+            <button title="Select file to encode in base64" class="demo-btn" id="demo-open-file">
+              <input type="file" id="demo-file-input" style="display:none" />
+              <img draggable="false" src="assets/images/icons/file.png" alt="open file" />
+              <span>file</span>
+            </button>
+            <button title="Copy source value" class="demo-btn" id="demo-copy-source">
+              <img draggable="false" src="assets/images/icons/copy.png" alt="copy" />
+              <span>copy</span>
+            </button>
+            <button title="Paste value from clipboard" class="demo-btn" id="demo-paste-source">
+              <img draggable="false" src="assets/images/icons/paste.png" alt="paste" />
+              <span>paste</span>
+            </button>
+            <button title="Clear source value" class="demo-btn" id="demo-clear-source">
+              <img draggable="false" src="assets/images/icons/delete.png" alt="clear" />
+              <span>clear</span>
+            </button>
+          </div>
+        </div>
+        <div class="demo-action-area-body">
+          <div id="demo-file-info" class="demo-file-info">
+            <img draggable="false" src="assets/images/icons/file.png" alt="opened file" />
+            <label id="demo-file-name">No file selected</label>
+          </div>
+          <textarea id="demo-source" placeholder="Enter your text or drop your file."></textarea>
+          <span id="demo-source-length">0 characters</span>
+        </div>
+      </div>
+
+      <!-- Convert actions -->
+      <div class="demo-action-area">
+        <div class="demo-action-area-header">
+          <label>Convert to:</label>
+        </div>
+        <div class="demo-actions">
+          <button data-tooltip="1" title="Convert source value to text" class="demo-btn demo-convert-btn disabled" id="demo-decode-btn">
+            <img draggable="false" src="assets/images/icons/text.png" alt="to text" />
+            <span>text</span>
+          </button>
+          <button data-tooltip="2" title="Convert source value to base64" class="demo-btn demo-convert-btn disabled" id="demo-encode-btn">
+            <img draggable="false" src="assets/images/icons/base64.png" alt="to base64" />
+            <span>base64</span>
+          </button>
+          <button data-tooltip="3" title="Convert source value to parsed JWT" class="demo-btn demo-convert-btn disabled" id="demo-jwt-btn">
+            <img draggable="false" src="assets/images/icons/jwt.png" alt="decode jwt" />
+            <span>jwt</span>
+          </button>
+          <button data-tooltip="4" title="Convert source base64 value to image" class="demo-btn demo-convert-btn disabled" id="demo-image-btn">
+            <img draggable="false" src="assets/images/icons/image.png" alt="to image" />
+            <span>image</span>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- Result area -->
+      <div class="demo-action-area">
+        <div class="demo-action-area-header">
+          <label for="demo-result">Result:</label>
+          <div class="demo-btn-panel">
+            <button title="Format JSON value" class="demo-btn" id="demo-beautify">
+              <img draggable="false" src="assets/images/icons/structure.png" alt="tree" />
+              <span>pretty</span>
+            </button>
+            <button title="Copy result value to clipboard" class="demo-btn disabled" id="demo-copy-result">
+              <img draggable="false" src="assets/images/icons/copy.png" alt="copy" />
+              <span>copy</span>
+            </button>
+            <button title="Clear result value" class="demo-btn disabled" id="demo-clear-result">
+              <img draggable="false" src="assets/images/icons/delete.png" alt="clear" />
+              <span>clear</span>
+            </button>
+          </div>
+        </div>
+        <div class="demo-action-area-body">
+          <div id="demo-result" contenteditable="true"></div>
+          <span id="demo-result-length">0 characters</span>
+          <div id="demo-result-img-container" class="demo-result-img-container">
+            <img id="demo-result-img" draggable="false" alt="Image preview" />
+            <p class="demo-result-img-meta" id="demo-result-img-meta">
+              <strong>Image info</strong>
+              <span>Size: <span id="demo-result-img-size">0</span> KB</span>
+              <span>Resolution: <span id="demo-result-img-resolution"></span> px</span>
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Floating panel -->
+      <div class="demo-floating-panel">
+        <button title="How to use the extension" class="demo-btn" id="demo-open-faq">
+          <img draggable="false" src="assets/images/icons/question-mark.png" alt="FAQ" />
+        </button>
+      </div>
+
+      </div><!-- /.demo-card -->
+
+      <div class="try-install-banner">
+        <p>✨ Like what you see? <a href="https://chromewebstore.google.com/detail/base64coder-encode-decode/ebgonfpmppfndacngpbmgajldoabnjkm" target="_blank" rel="noopener">Install the full extension</a> for omnibox support, context menus, keyboard shortcuts, and more!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Context Menu Showcase -->
+  <section class="context-section" id="context-menu">
+    <div class="section-container">
+      <div class="context-content">
+        <div class="context-text">
+          <h2>Right-Click <span class="highlight">Anything</span></h2>
+          <p>Select any text or image, right-click, and instantly encode, decode, or copy — without leaving your page.</p>
+          <ul class="context-features">
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>copy base64 → text</strong> — Decode selected Base64 to readable text</span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>copy text → base64</strong> — Encode selected text to Base64</span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>copy image → base64</strong> — Right-click any image, get its Base64 string on your clipboard</span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>open base64</strong> — Send selected text to the extension for full conversion options</span>
+            </li>
+          </ul>
+        </div>
+        <div class="context-visual">
+          <div class="context-menu-card">
+            <div class="context-menu-item"><span>Copy image to Base64</span></div>
+            <div class="context-menu-divider"></div>
+            <div class="context-menu-item"><span>Copy base64 → text</span></div>
+            <div class="context-menu-item highlight-item"><span>Copy text → base64</span></div>
+            <div class="context-menu-item"><span>Open base64</span></div>
+            <div class="context-menu-divider"></div>
+            <div class="context-menu-item muted"><span>Inspect</span></div>
+          </div>
         </div>
       </div>
     </div>
