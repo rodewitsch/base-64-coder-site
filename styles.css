@@ -947,6 +947,14 @@ img {
   border-radius: 5px;
   width: 42px;
   height: 42px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.demo-floating-panel .demo-btn.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .demo-floating-panel .demo-btn:hover {

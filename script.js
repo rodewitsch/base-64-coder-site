@@ -556,7 +556,15 @@ document.addEventListener('DOMContentLoaded', () => {
   //  Scroll-to-top button
   // ============================================================
 
-  document.getElementById('demo-scroll-top').addEventListener('click', () => {
+  const scrollTopBtn = document.getElementById('demo-scroll-top');
+
+  const onScrollTop = () => {
+    scrollTopBtn.classList.toggle('visible', window.scrollY > 300);
+  };
+  window.addEventListener('scroll', onScrollTop, { passive: true });
+  onScrollTop();
+
+  scrollTopBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
