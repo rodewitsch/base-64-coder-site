@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Base64Coder FAQ & Guide — Learn how to use the extension: encode/decode base64, inspect JWT tokens, convert images, keyboard shortcuts, and troubleshooting.">
+  <title>Base64Coder Guide — FAQ</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/icons/b64c32.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <a href="../" class="back-link">← Back to Base64Coder</a>
+
+    <h1>
+      <img draggable="false" src="../assets/images/icons/b64c48.png" alt="Base64Coder" />
+      <span>Base64Coder Guide</span>
+    </h1>
+
+    <button class="accordion">How to use the extension in the search bar</button>
+    <div class="panel">
+      <p>To activate the extension, enter <strong>'64'</strong> in the search bar and press <strong>'Tab'</strong>.</p>
+      <p>Write or paste text that you want to convert and choose the conversion direction: <strong>'base64 → text'</strong> or <strong>'text → base64'</strong> using keyboard or mouse.</p>
+      <p class="hcenter">
+        <a
+          class="video-placeholder"
+          href="https://www.youtube.com/watch?v=TfT2OFRtAo0"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="How to use the extension in the search bar"
+        >
+          <img
+            src="https://img.youtube.com/vi/TfT2OFRtAo0/hqdefault.jpg"
+            alt="How to use the extension in the search bar"
+            loading="lazy"
+          />
+          <span class="play-button" aria-hidden="true"></span>
+        </a>
+      </p>
+    </div>
+
+    <button class="accordion">Context menu features</button>
+    <div class="panel">
+      <p class="hcenter">
+        <img draggable="false" src="../assets/images/faq/context menu.jpg" alt="context menu" />
+      </p>
+      <p>The context menu provides access to the following extension features:</p>
+      <ul>
+        <li><b>copy base64 → text</b> — converts the selected text from base64 to text.</li>
+        <li><b>copy text → base64</b> — converts the selected text to base64.</li>
+        <li>
+          <b>copy image → base64</b> — converts and copies the image under the pointer to base64. Process of converting images to base64 can take some time; you can see the progress in the extension icon.
+          <p class="vcenter">
+            <img draggable="false" src="../assets/images/faq/wait.jpg" alt="wait icon" /> — the process is running.
+          </p>
+          <p class="vcenter">
+            <img draggable="false" src="../assets/images/faq/done.jpg" alt="done icon" /> — the process is done.
+          </p>
+          <p class="vcenter">
+            <img draggable="false" src="../assets/images/faq/err.jpg" alt="err icon" /> — an error occurred during the process.
+          </p>
+        </li>
+        <li><b>open base64</b> — opens the selected text in the extension where you can convert it to what you need.</li>
+      </ul>
+      <p class="hcenter">
+        <a
+          class="video-placeholder"
+          href="https://www.youtube.com/watch?v=u8NA7PN8EaI"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Base64Coder context menu features"
+        >
+          <img
+            src="https://img.youtube.com/vi/u8NA7PN8EaI/hqdefault.jpg"
+            alt="Base64Coder context menu features"
+            loading="lazy"
+          />
+          <span class="play-button" aria-hidden="true"></span>
+        </a>
+      </p>
+    </div>
+
+    <button class="accordion">Available hot keys</button>
+    <div class="panel">
+      <p>The extension provides the following keyboard shortcuts:</p>
+      <ul>
+        <li><b>Ctrl + S</b> — saves the result to a file. (Video is not supported)</li>
+        <li><b>Ctrl + Shift + S</b> — saves the result to a file without the base64 MIME prefix. (Video is not supported)</li>
+        <li><b>Shift</b> — buttons "Copy" and "Save" will do their function removing the base64 MIME prefix. The "Clear" buttons simultaneously clear the source and the result.</li>
+        <li><b>Shift + Backspace</b> or <b>Shift + Delete</b> — clears the source and the result.</li>
+        <p class="hcenter">
+          <img src="../assets/images/faq/extended copy mode.jpg" alt="extended copy mode" />
+        </p>
+        <li>
+          <b>Alt + Number</b> — activates the corresponding button in the action area.
+          <p class="hcenter">
+            <img src="../assets/images/faq/alt actions.jpg" alt="alt actions" />
+          </p>
+        </li>
+        <li><b>Ctrl + C</b> — copies the text result to clipboard if nothing is selected. If something is selected, the combination works as usual.</li>
+        <li><b>Ctrl + Shift + C</b> — copies the text result to clipboard without the MIME type prefix if nothing is selected. If something is selected, the combination works as usual.</li>
+        <li><b>Ctrl + O</b> — opens a file in the extension.</li>
+      </ul>
+    </div>
+
+    <button class="accordion">Result formatting</button>
+    <div class="panel">
+      <p>If the result is JSON, you can use the <strong>"Pretty"</strong> button, which formats the JSON. If JSON contains properties such as <code>iat</code>, <code>exp</code> (which usually exist in JWT), the extension allows you to view the date/time in a human-readable format.</p>
+      <p class="hcenter">
+        <img src="../assets/images/faq/format.jpg" alt="format" />
+      </p>
+    </div>
+
+    <button class="accordion">JWT Inspector &amp; JSON tools</button>
+    <div class="panel">
+      <p>The extension can automatically detect JWT tokens and decode them with a single click using the <strong>"jwt"</strong> button. The payload is displayed as formatted JSON.</p>
+      <p>For any JSON result (including JWT), use the <strong>"pretty"</strong> button to format it with indentation or <strong>"minify"</strong> to compress it. If the JSON contains JWT timestamp fields like <code>iat</code> (issued at) or <code>exp</code> (expiration), hover over them to see the date/time in a human-readable tooltip.</p>
+    </div>
+
+    <button class="accordion">Working with files</button>
+    <div class="panel">
+      <p>You can open any file using the <strong>"file"</strong> button (or <strong>Ctrl + O</strong>) — it will be encoded to base64 automatically. Simply drag &amp; drop a file onto the extension page to achieve the same result. You can also paste an image or file from the clipboard (<strong>Ctrl + V</strong>).</p>
+      <p>After conversion, use the <strong>"save"</strong> button (<strong>Ctrl + S</strong>) to download the result as a file. Hold <strong>Shift</strong> while clicking "Save" to save without the base64 MIME prefix.</p>
+    </div>
+
+    <button class="accordion">Decode base64 to image, audio &amp; video</button>
+    <div class="panel">
+      <p>Base64 isn't just for text! The extension can decode base64 strings into images, audio, and video using the corresponding buttons in the <strong>"Convert to"</strong> area. For images, you'll see a preview along with resolution and file size info.</p>
+      <p>To encode media to base64, use the context menu option <strong>"copy image → base64"</strong> by right-clicking on any image on a webpage. You can also open any image file through the <strong>"file"</strong> button or drag &amp; drop.</p>
+    </div>
+
+    <button class="accordion">What to do if something goes wrong?</button>
+    <div class="panel">
+      <p>Try turning it off and then turning it back on.</p>
+      <p style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 12px;">
+        <img width="400" src="../assets/images/faq/browser extension menu.jpg" alt="browser extension menu" />
+        <img width="400" src="../assets/images/faq/reload.jpg" alt="reload" />
+      </p>
+      <p>If this doesn't help, write to me. Maybe I can help.</p>
+      <p>E-mail: <a href="mailto:rodewitsch@inbox.ru">rodewitsch@inbox.ru</a></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
